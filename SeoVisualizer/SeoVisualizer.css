@@ -1,22 +1,30 @@
+
+/* containers */
 div.sv-form
 {
-    width:350px; float:left;
-}
-
-div.sv-form input, div.sv-form textarea
-{
-    width:300px;
-}
-
-div.sv-form p.sv-error
-{
-    color:red;
+    width: 30%;
+    float: left;
+    margin-right: 40px;
 }
 
 div.sv-demo
 {
-    width:200px; float:left;
+    width: 60%;
+    float: left;
 }
+
+/* form elements */
+div.sv-form input, div.sv-form textarea
+{
+    width:100%;
+}
+
+div.sv-form textarea 
+{
+    height: 100px;
+}
+
+/* general text formating */
 
 div.sv-demo h6, div.sv-demo p
 {
@@ -25,18 +33,35 @@ div.sv-demo h6, div.sv-demo p
     margin:0;
 }
 
+/* form text formating */
+
+div.sv-form p.sv-error
+{
+    color:red;
+    margin-top: 3px;
+
+}
+
+/* demo-mode text formating */
+
 div.sv-demo h6
 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom:3px;
+    color:blue; 
+    text-decoration:underline;
 }
+
 div.sv-demo p
 {
     font-size: 13px;
-    line-height:14px;
+    line-height:19px;
     margin-bottom:3px;
 }
+
 div.sv-demo p.sv-url
 {
     color:#00802a;
 }
+
+

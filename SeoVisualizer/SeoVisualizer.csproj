@@ -110,7 +110,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="web.config" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="package.manifest" />
   </ItemGroup>
@@ -118,6 +120,14 @@
     <Content Include="SeoVisualizer.css" />
     <Content Include="SeoVisualizer.html" />
     <Content Include="SeoVisualizerController.controller.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -147,6 +157,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(SolutionDir)SeoVisualizer\*.html"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
+XCOPY "$(SolutionDir)SeoVisualizer\*.css"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
+XCOPY "$(SolutionDir)SeoVisualizer\*.js"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
+XCOPY "$(SolutionDir)SeoVisualizer\*.manifest"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
