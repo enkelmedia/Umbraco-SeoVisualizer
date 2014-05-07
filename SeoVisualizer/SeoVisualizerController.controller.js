@@ -2,9 +2,6 @@ angular.module("umbraco")
     .controller("EnkelMedia.SeoVisualizerController",
     function ($scope) {
         
-        // Hardcoding the label as hidden?
-        $scope.model.hideLabel = false; //true;
-
         $scope.title = $scope.model.value.title;
         $scope.description = $scope.model.value.description;
 
@@ -20,20 +17,22 @@ angular.module("umbraco")
             $scope.model.value = { title: $scope.title, description: $scope.description };
         };
 
+
         $scope.GetUrl = function() {
-
             return $scope.ProtocolAndHost() + $scope.GetParentContent().urls[0];
-
         };
 
-        $scope.ProtocolAndHost = function() {
+        /* ****** utility funcitons ******* */
 
+        // Returns the protocal and host for the current domain (ie. http://www.mainwebsite.com).
+        $scope.ProtocolAndHost = function() {
             var http = location.protocol;
             var slashes = http.concat("//");
             return slashes.concat(window.location.hostname);
-
         };
 
+        // Climbs the $scope.parent objects to find the parent that contains the "content"-property which
+        // has the url-property the we need to figure out the url of the current document.
         $scope.GetParentContent = function() {
             var currentScope = $scope.$parent;
             
