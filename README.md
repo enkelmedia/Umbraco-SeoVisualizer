@@ -50,6 +50,8 @@ or like this
 @seo.Title
 @seo.Description
 
+Testing: <SeoValues>
+
 The last approach would perform better as the convertion of the object will only have to be done once.
 
 Cheers!
