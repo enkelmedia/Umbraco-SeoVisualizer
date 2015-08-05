@@ -39,19 +39,15 @@ After that you need to add this data type to one or more of your document types 
 
 There are two ways to use the values from the property editor in the views.
 
-@(this.Model.Content.GetPropertyValue<SeoValues>("seo").Description)
+@(this.Model.Content.GetPropertyValue&lt;SeoValues&gt;("seo").Description)
 
 or like this
 
 @{
-  var seo = this.Model.Content.GetPropertyValue<SeoValues>("seo");
+  var seo = this.Model.Content.GetPropertyValue&lt;SeoValues&gt;("seo");
 }
 
 @seo.Title
 @seo.Description
 
-Testing: <SeoValues>
-
 The last approach would perform better as the convertion of the object will only have to be done once.
-
-Cheers!
