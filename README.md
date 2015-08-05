@@ -51,8 +51,3 @@ or like this
 @seo.Description
 
 The last approach would perform better as the convertion of the object will only have to be done once.
-
-
-
-
-

@@ -5,6 +5,16 @@ angular.module("umbraco")
         $scope.title = $scope.model.value.title;
         $scope.description = $scope.model.value.description;
 
+        if ($scope.model.value.title == undefined) {
+
+            $scope.title = "";
+        }
+        if ($scope.model.value.description == undefined) {
+
+            $scope.description = "";
+        }
+        $scope.model.value = { title: $scope.title, description: $scope.description };
+
         $scope.$watch("title", function () {
             $scope.UpdateModel();
         });

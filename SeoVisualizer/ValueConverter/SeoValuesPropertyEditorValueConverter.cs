@@ -16,16 +16,23 @@ namespace SeoVisualizer
 
         public override object ConvertDataToSource(PublishedPropertyType propertyType, object source, bool preview)
         {
-            if (source == null) return null;
+            if (source == null) return new SeoValues();
+
             var sourceString = source.ToString();
 
             try
             {
-                return JsonConvert.DeserializeObject<SeoValues>(sourceString);
+                var obj = JsonConvert.DeserializeObject<SeoValues>(sourceString);
+
+                if (obj != null)
+                    return obj;
+
+                return new SeoValues();
+
             }
             catch (Exception ex)
             {
-                return null;
+                return new SeoValues();
             }
             
         }
