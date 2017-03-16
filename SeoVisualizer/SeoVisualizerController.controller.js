@@ -29,7 +29,14 @@ angular.module("umbraco")
 
 
         $scope.GetUrl = function() {
-            return $scope.ProtocolAndHost() + $scope.GetParentContent().urls[0];
+            var url = $scope.GetParentContent().urls[0];
+
+            if (url.indexOf('http://') == 0 || url.indexOf('https://') == 0) {
+                // if umbraco returns absolute urls we don't need to append the protocol and host
+                return url;
+            }
+
+            return $scope.ProtocolAndHost() + url;
         };
 
         /* ****** utility funcitons ******* */
