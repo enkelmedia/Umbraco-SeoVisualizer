@@ -10,5 +10,10 @@
     <releaseNotes>2nd release added property value converter. Ensured DLL is correctly included in the package.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>umbraco cms umbraco7 seo visualizer enkel media umb</tags>
+    <license type="expression">MIT</license>
+    <dependencies>
+
+    </dependencies>
   </metadata>
+  
 </package>

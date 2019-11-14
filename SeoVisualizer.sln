@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoVisualizer", "SeoVisualizer\SeoVisualizer.csproj", "{D096D1CD-38A6-498D-ACC1-E958CDC3396E}"
 EndProject
@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{ECB0D825-02B2-4512-BA1D-2DBD3968D803}"
+	ProjectSection(SolutionItems) = preProject
+		SeoVisualizer\SeoVisualizer.nuspec = SeoVisualizer\SeoVisualizer.nuspec
 	EndProjectSection
 EndProject
 Global
