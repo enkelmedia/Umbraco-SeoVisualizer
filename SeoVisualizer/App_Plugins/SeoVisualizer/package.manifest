@@ -1,0 +1,20 @@
+{
+    propertyEditors: [
+        {
+		alias: "EnkelMedia.SeoVisualizer",
+		name: "Seo Visualizer",
+		editor: {
+			view: "~/App_Plugins/SeoVisualizer/SeoVisualizer.html",
+			valueType: "JSON"
+		}
+		
+        }
+    ]
+    ,
+    javascript: [
+        '~/App_Plugins/SeoVisualizer/SeoVisualizerController.controller.js'
+    ],
+	css: [
+		'~/App_Plugins/SeoVisualizer/SeoVisualizer.css'
+	]
+}

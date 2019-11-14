@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -220,12 +222,12 @@
     <Compile Include="ValueConverter\SeoValuesPropertyEditorValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="package.manifest" />
+    <Content Include="App_Plugins\SeoVisualizer\package.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SeoVisualizer.css" />
-    <Content Include="SeoVisualizer.html" />
-    <Content Include="SeoVisualizerController.controller.js" />
+    <Content Include="App_Plugins\SeoVisualizer\SeoVisualizer.css" />
+    <Content Include="App_Plugins\SeoVisualizer\SeoVisualizer.html" />
+    <Content Include="App_Plugins\SeoVisualizer\SeoVisualizerController.controller.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -239,6 +241,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -268,13 +271,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>XCOPY "$(SolutionDir)SeoVisualizer\*.html"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
-XCOPY "$(SolutionDir)SeoVisualizer\*.css"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
-XCOPY "$(SolutionDir)SeoVisualizer\*.js"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
-XCOPY "$(SolutionDir)SeoVisualizer\*.manifest"  "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer\" /y /S
-
-
-XCOPY "$(SolutionDir)SeoVisualizer.Web\App_Plugins\SeoVisualizer"  "$(SolutionDir)nuget\content\App_Plugins\SeoVisualizer" /y /S</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

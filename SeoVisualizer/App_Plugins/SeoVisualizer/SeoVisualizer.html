@@ -1,0 +1,17 @@
+<div ng-controller="EnkelMedia.SeoVisualizerController">
+    
+    <div class="sv-form">
+        <input type="text" ng-model="title" />
+        <p ng-show="title.length > 55" class="sv-error">A meta title should not be more than 55 chars.</p>
+        <br /><br />
+        <textarea ng-model="description"></textarea>
+        <p ng-show="description.length > 155" class="sv-error">A meta description should not be more than 155 chars.</p>
+    </div>
+    <div class="sv-demo">
+        <h6>{{title}}</h6>
+        <p class="sv-url" ng-show="title.length > 0 || description > 0">{{GetUrl()}}</p>
+        <p>{{description}}</p>
+    </div>
+    <div style="clear:both"></div>
+
+</div>
