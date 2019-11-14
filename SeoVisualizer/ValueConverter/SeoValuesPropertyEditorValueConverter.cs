@@ -1,20 +1,22 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Umbraco.Core.Composing;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
 
 namespace SeoVisualizer
 {
-    [PropertyValueType(typeof(SeoValues))]
-    [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.Content)]
-	public class SeoValuesPropertyEditorValueConverter : PropertyValueConverterBase
-	{
-        public override bool IsConverter(PublishedPropertyType propertyType)
-        {
-            return propertyType.PropertyEditorAlias.Equals("EnkelMedia.SeoVisualizer");
-        }
 
-        public override object ConvertDataToSource(PublishedPropertyType propertyType, object source, bool preview)
+    public class SeoValuesPropertyEditorValueConverter : PropertyValueConverterBase
+    {
+
+        public override bool IsConverter(PublishedPropertyType propertyType) => propertyType.EditorAlias.Equals("EnkelMedia.SeoVisualizer");
+
+        public override Type GetPropertyValueType(PublishedPropertyType propertyType) => typeof(SeoValues);
+
+        public override PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType) => PropertyCacheLevel.Snapshot;
+
+        public override object ConvertSourceToIntermediate(IPublishedElement owner, PublishedPropertyType propertyType, object source, bool preview)
         {
             if (source == null) return new SeoValues();
 
@@ -34,7 +36,9 @@ namespace SeoVisualizer
             {
                 return new SeoValues();
             }
-            
+
         }
-	}
+
+    }
+
 }

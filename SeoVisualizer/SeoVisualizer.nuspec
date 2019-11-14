@@ -2,18 +2,16 @@
 <package >
   <metadata>
     <id>UmbracoSeoVisualizer</id>
-    <version>1.2.2</version>
+    <version>8.0.0</version>
     <authors>Markus Johansson, Enkel Media</authors>
     <owners>Markus Johansson</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A simple seo visualizer property editor for Umbraco 7</description>
+    <description>A simple seo visualizer property editor for Umbraco 8</description>
     <releaseNotes>
-      1.2.2 Added configuration for max-chars and placeholder text, fixes design (width) to look more like the Google SERP.
-      1.2.1 Fixes issue with DLLs for nuget.
-      1.2.0 Added Property Value Convert to use in views and code
+      8.0.0 Added support for Umbraco 8
     </releaseNotes>
-    <copyright>Copyright 2017</copyright>
-    <tags>umbraco cms umbraco7 seo visualizer enkel media umb</tags>
+    <copyright>Copyright 2019</copyright>
+    <tags>umbraco cms umbraco8 seo visualizer enkel media umb</tags>
     <license type="expression">MIT</license>
     <dependencies>
 
