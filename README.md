@@ -13,6 +13,14 @@ Installation
 ------------
 Just install the package and a new data type called "Seo Visualizer" will be installed.
 
+## Building
+Open the command line and run 
+
+```
+nuget pack
+```
+
+In the SeoVisualizer-folder
 
 Features
 ------------
