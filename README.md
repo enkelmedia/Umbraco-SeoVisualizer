@@ -8,7 +8,7 @@ What?
 -----
 This is a property editor for Umbraco 7 used to take seo-related user input and visualize the search result for the editor.
 
-![Screenshot of Seo Visualizer](/documentation/seo-example.png?raw=true "Screenshot")
+![Screenshot of Seo Visualizer](https://github.com/enkelmedia/Umbraco-SeoVisualizer/raw/v8/Documentation/seo-example.PNG "Screenshot")
 
 Installation
 ------------
