@@ -1,14 +1,15 @@
 angular.module("umbraco")
     .controller("EnkelMedia.SeoVisualizerController",
-    function ($scope) {
-        
+    function ($scope, editorState) {
+
         $scope.title = $scope.model.value.title;
         $scope.description = $scope.model.value.description;
 
-        console.log('config', $scope.model.config);
-
         $scope.maxCharsTitle = 60;
         $scope.maxCharsDescription = 160;
+
+        console.log($scope.model.culture);
+        console.log(editorState.getCurrent());
 
         // use configuration if set
         if ($scope.model.config !== null) {
@@ -43,8 +44,16 @@ angular.module("umbraco")
         };
 
 
-        $scope.GetUrl = function() {
-            var url = $scope.GetParentContent().urls[0];
+        $scope.GetUrl = function () {
+
+            // find out the url based on the current culture
+            var allUrls = editorState.getCurrent().urls;
+            var url = '';
+            for (var i = 0; i < allUrls.length; i++) {
+                if (allUrls[i].culture == $scope.model.culture) {
+                    url = allUrls[i].text;
+                }
+            }
 
             if (url.indexOf('http://') == 0 || url.indexOf('https://') == 0) {
                 // if umbraco returns absolute urls we don't need to append the protocol and host
@@ -61,23 +70,6 @@ angular.module("umbraco")
             var http = location.protocol;
             var slashes = http.concat("//");
             return slashes.concat(window.location.hostname);
-        };
-
-        // Climbs the $scope.parent objects to find the parent that contains the "content"-property which
-        // has the url-property the we need to figure out the url of the current document.
-        $scope.GetParentContent = function() {
-            var currentScope = $scope.$parent;
-            
-            for (var i = 0; i < 150; i++) {
-                if (currentScope.content) {
-                    return currentScope.content;
-                }
-
-                currentScope = currentScope.$parent;
-            }
-
-            return null;
-
         };
 
     });
