@@ -15,8 +15,14 @@ Install-Package UmbracoSeoVisualizer
 ### Version 1 = Umbraco 7
 The first version of the package was created for Umbraco 7, make sure that you install the right version when you install from nuget.
 
+[Go to the V1-branch](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v1)
+
+
 ### Version 8 = Umbraco 8
 When Umbraco 8 was released we decided to follow the version number to make it more clear.
+
+[Go to the V8-branch](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v8)
+
 
 ### Features
 The property editor just shows a form with two fields
