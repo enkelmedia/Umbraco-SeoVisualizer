@@ -5,6 +5,21 @@ angular.module("umbraco")
         $scope.title = $scope.model.value.title;
         $scope.description = $scope.model.value.description;
 
+        console.log('config', $scope.model.config);
+
+        $scope.maxCharsTitle = 60;
+        $scope.maxCharsDescription = 160;
+
+        // use configuration if set
+        if ($scope.model.config !== null) {
+            if ($scope.model.config.maxCharsTitle !== '' && parseInt($scope.model.config.maxCharsTitle) > 0) {
+                $scope.maxCharsTitle = parseInt($scope.model.config.maxCharsTitle);
+            }
+            if ($scope.model.config.maxCharsDescription !== '' && parseInt($scope.model.config.maxCharsDescription) > 0) {
+                $scope.maxCharsDescription = parseInt($scope.model.config.maxCharsDescription);
+            }
+        }
+
         if ($scope.model.value.title == undefined) {
 
             $scope.title = "";
