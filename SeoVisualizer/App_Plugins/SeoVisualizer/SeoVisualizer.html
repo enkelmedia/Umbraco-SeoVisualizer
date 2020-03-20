@@ -1,15 +1,18 @@
 <div ng-controller="EnkelMedia.SeoVisualizerController">
-    
+
     <div class="sv-form">
-        <input type="text" ng-model="title" placeholder="Enter the meta title (page title)" />
-        <p ng-show="title.length > maxCharsTitle" class="sv-error">A meta title should not be more than {{maxCharsTitle}} chars.</p>
-        <br /><br />
-        <textarea ng-model="description" placeholder="Enter a meta description"></textarea>
-        <p ng-show="description.length > maxCharsDescription" class="sv-error">A meta description should not be more than {{maxCharsDescription}} chars.</p>
+        <div>
+            <input type="text" ng-model="title" placeholder="Enter the meta title (page title)" />
+            <p ng-class="{'seo-invisible' : title.length > maxCharsTitle }" class="sv-error">The optimal length is less than {{maxCharsTitle}} characters.</p>
+        </div>
+        <div>
+            <textarea ng-model="description" placeholder="Enter a meta description"></textarea>
+            <p ng-class="{'seo-invisible' : description.length > maxCharsDescription }" class="sv-error">The optimal length is less than {{maxCharsDescription}} characters.</p>
+        </div>
     </div>
     <div class="sv-demo">
-        <h6>{{title}}</h6>
-        <p class="sv-url" ng-show="title.length > 0 || description > 0">{{GetUrl()}}</p>
+        <h6>{{getTitle()}}</h6>
+        <p class="sv-url">{{GetUrl()}}</p>
         <p>{{description}}</p>
     </div>
     <div style="clear:both"></div>

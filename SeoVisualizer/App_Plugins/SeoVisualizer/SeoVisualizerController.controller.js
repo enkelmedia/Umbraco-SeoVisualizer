@@ -2,6 +2,8 @@ angular.module("umbraco")
     .controller("EnkelMedia.SeoVisualizerController",
     function ($scope, editorState) {
 
+        var currentNode = editorState.getCurrent();
+
         if ($scope.model && $scope.model.value) {
             $scope.title = $scope.model.value.title;
             $scope.description = $scope.model.value.description;
@@ -40,22 +42,48 @@ angular.module("umbraco")
             $scope.model.value = { title: $scope.title, description: $scope.description };
         };
 
+        $scope.getTitle = function() {
+
+            if ($scope.title && $scope.title !== '') {
+                
+                return $scope.title;
+            } else {
+
+                if (currentNode && currentNode.variants) {
+                    return currentNode.variants[0].name;
+                } else {
+                    return '';
+                }
+
+                
+            }
+
+        };
 
         $scope.GetUrl = function () {
 
+            
             // find out the url based on the current culture
             var allUrls = editorState.getCurrent().urls;
+
             var url = '';
 
             if (allUrls) {
 
-                for (var i = 0; i < allUrls.length; i++) {
-                    if (allUrls[i].culture == $scope.model.culture) {
-                        url = allUrls[i].text;
+                // If just one culture, lets use that
+                if (allUrls.length === 1) {
+
+                    url = allUrls[0].text;
+
+                } else {
+                    for (var i = 0; i < allUrls.length; i++) {
+                        if (allUrls[i].culture === $scope.model.culture) {
+                            url = allUrls[i].text;
+                        }
                     }
                 }
 
-                if (url.indexOf('http://') == 0 || url.indexOf('https://') == 0) {
+                if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
                     // if umbraco returns absolute urls we don't need to append the protocol and host
                     return url;
                 }
