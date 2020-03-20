@@ -2,14 +2,18 @@ angular.module("umbraco")
     .controller("EnkelMedia.SeoVisualizerController",
     function ($scope, editorState) {
 
-        $scope.title = $scope.model.value.title;
-        $scope.description = $scope.model.value.description;
+        if ($scope.model && $scope.model.value) {
+            $scope.title = $scope.model.value.title;
+            $scope.description = $scope.model.value.description;
+        } else {
+            
+            $scope.title = "";
+            $scope.description = "";
+            
+        }
 
         $scope.maxCharsTitle = 60;
         $scope.maxCharsDescription = 160;
-
-        console.log($scope.model.culture);
-        console.log(editorState.getCurrent());
 
         // use configuration if set
         if ($scope.model.config !== null) {
@@ -21,14 +25,7 @@ angular.module("umbraco")
             }
         }
 
-        if ($scope.model.value.title == undefined) {
-
-            $scope.title = "";
-        }
-        if ($scope.model.value.description == undefined) {
-
-            $scope.description = "";
-        }
+        
         $scope.model.value = { title: $scope.title, description: $scope.description };
 
         $scope.$watch("title", function () {
@@ -49,17 +46,20 @@ angular.module("umbraco")
             // find out the url based on the current culture
             var allUrls = editorState.getCurrent().urls;
             var url = '';
-            for (var i = 0; i < allUrls.length; i++) {
-                if (allUrls[i].culture == $scope.model.culture) {
-                    url = allUrls[i].text;
+
+            if (allUrls) {
+
+                for (var i = 0; i < allUrls.length; i++) {
+                    if (allUrls[i].culture == $scope.model.culture) {
+                        url = allUrls[i].text;
+                    }
+                }
+
+                if (url.indexOf('http://') == 0 || url.indexOf('https://') == 0) {
+                    // if umbraco returns absolute urls we don't need to append the protocol and host
+                    return url;
                 }
             }
-
-            if (url.indexOf('http://') == 0 || url.indexOf('https://') == 0) {
-                // if umbraco returns absolute urls we don't need to append the protocol and host
-                return url;
-            }
-
             return $scope.ProtocolAndHost() + url;
         };
 
