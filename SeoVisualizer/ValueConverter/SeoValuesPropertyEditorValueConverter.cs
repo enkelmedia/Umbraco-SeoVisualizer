@@ -10,13 +10,13 @@ namespace SeoVisualizer
     public class SeoValuesPropertyEditorValueConverter : PropertyValueConverterBase
     {
 
-        public override bool IsConverter(PublishedPropertyType propertyType) => propertyType.EditorAlias.Equals("EnkelMedia.SeoVisualizer");
+        public override bool IsConverter(IPublishedPropertyType propertyType) => propertyType.EditorAlias.Equals("EnkelMedia.SeoVisualizer");
 
-        public override Type GetPropertyValueType(PublishedPropertyType propertyType) => typeof(SeoValues);
+        public override Type GetPropertyValueType(IPublishedPropertyType propertyType) => typeof(SeoValues);
 
-        public override PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType) => PropertyCacheLevel.Snapshot;
+        public override PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType) => PropertyCacheLevel.Snapshot;
 
-        public override object ConvertSourceToIntermediate(IPublishedElement owner, PublishedPropertyType propertyType, object source, bool preview)
+        public override object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
         {
             if (source == null) return new SeoValues();
 
