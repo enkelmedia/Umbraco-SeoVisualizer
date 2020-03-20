@@ -44,18 +44,28 @@ angular.module("umbraco")
 
         $scope.getTitle = function() {
 
+            var title = '';
+
             if ($scope.title && $scope.title !== '') {
                 
-                return $scope.title;
+                title = $scope.title;
             } else {
 
                 if (currentNode && currentNode.variants) {
-                    return currentNode.variants[0].name;
+                    title = currentNode.variants[0].name;
                 } else {
-                    return '';
+                    title = '';
                 }
 
-                
+            }
+
+            // Only append suffix if we have a value to render.
+            if (title === '') {
+                return title;
+            }
+
+            if ($scope.model && $scope.model.config && $scope.model.config.titleSuffix !== '') {
+                return title + ' ' + $scope.model.config.titleSuffix;
             }
 
         };

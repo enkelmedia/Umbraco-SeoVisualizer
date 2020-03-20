@@ -10,25 +10,31 @@
       "prevalues": {
         "fields": [
           {
-            "label": "Max chars for title warning",
+            "label": "Recommended number of characters for Title warning",
             "description": "Will show warning when the title contains more chars than defined. (Default is 60).",
             "key": "maxCharsTitle",
             "view": "number"
           },
           {
-            "label": "Max chars for description warning",
+            "label": "Recommended number of characters for Description warning",
             "description": "Will show warning when the description contains more chars than defined. (Default is 160).",
             "key": "maxCharsDescription",
             "view": "number"
+          },
+          {
+            "label": "Default Title Suffix",
+            "description": "Will append a suffix to the Title preview (not included in the saved data)",
+            "key": "titleSuffix",
+            "view": "textstring"
           }
         ]
       }
     }
   ],
   "javascript": [
-    '~/App_Plugins/SeoVisualizer/SeoVisualizerController.controller.js'
+    "~/App_Plugins/SeoVisualizer/SeoVisualizerController.controller.js"
   ],
   "css": [
-    '~/App_Plugins/SeoVisualizer/SeoVisualizer.css'
+    "~/App_Plugins/SeoVisualizer/SeoVisualizer.css"
   ]
 }
