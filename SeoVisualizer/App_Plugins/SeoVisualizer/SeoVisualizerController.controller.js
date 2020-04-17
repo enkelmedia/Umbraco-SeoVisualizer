@@ -64,8 +64,11 @@ angular.module("umbraco")
                 return title;
             }
 
-            if ($scope.model && $scope.model.config && $scope.model.config.titleSuffix !== '') {
+            // Only append suffix if there is a value set
+            if ($scope.model && $scope.model.config && $scope.model.config.titleSuffix && $scope.model.config.titleSuffix !== '') {
                 return title + ' ' + $scope.model.config.titleSuffix;
+            } else {
+                return title;
             }
 
         };
