@@ -3,14 +3,15 @@
 
 
 div.sv-form {
-    width: 30%;
+    width: 400px;
     float: left;
     margin-right: 40px;
 }
 
 div.sv-demo {
-    width: 600px; /* The width of the desktop-SERP as of 2019-11-14 */
-    float: left;
+	max-width: 600px; /* The width of the desktop-SERP as of 2019-11-14 */
+	width: auto;
+	float: left;
 }
 
 /* form elements */

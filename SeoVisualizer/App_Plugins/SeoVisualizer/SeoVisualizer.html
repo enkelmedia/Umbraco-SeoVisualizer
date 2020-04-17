@@ -2,11 +2,11 @@
 
     <div class="sv-form">
         <div>
-            <input type="text" ng-model="title" placeholder="Enter the meta title (page title)" />
+            <input type="text" ng-model="title" placeholder="Enter the Page Title" />
             <p ng-class="{'seo-invisible' : title.length > maxCharsTitle }" class="sv-error">The optimal length is less than {{maxCharsTitle}} characters.</p>
         </div>
         <div>
-            <textarea ng-model="description" placeholder="Enter a meta description"></textarea>
+            <textarea ng-model="description" placeholder="Enter a Page Description"></textarea>
             <p ng-class="{'seo-invisible' : description.length > maxCharsDescription }" class="sv-error">The optimal length is less than {{maxCharsDescription}} characters.</p>
         </div>
     </div>
