@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>SeoVisualizer</name>
+      <version>8.1.2</version>
+      <iconUrl></iconUrl>
+      <licence url="https://opensource.org/licenses/MIT">MIT</licence>
+      <url>https://our.umbraco.com/packages/collaboration/seo-visualizer/</url>
+      <requirements type="strict">
+        <major>8</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Markus Johansson</name>
+      <website>https://our.umbraco.com/packages/collaboration/seo-visualizer/</website>
+    </author>
+    <readme><![CDATA[Property editor for editing meta title and description]]></readme>
+  </info>
+  <files>
+    <folder path="App_Plugins/SeoVisualizer" orgPath="App_Plugins/SeoVisualizer" />
+    <file path="bin/SeoVisualizer.dll" orgPath="bin/SeoVisualizer.dll" />
+    <file path="bin/SeoVisualizer.pdb" orgPath="bin/SeoVisualizer.pdb" />
+  </files>
+  <Actions />
+  <control />
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

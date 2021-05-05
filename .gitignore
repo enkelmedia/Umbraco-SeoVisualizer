@@ -19,3 +19,5 @@ packages
 packages
 !packages/repositories.config
 .vs/
+SeoVisualizer/umbPackPush.cmd
+*.zip
