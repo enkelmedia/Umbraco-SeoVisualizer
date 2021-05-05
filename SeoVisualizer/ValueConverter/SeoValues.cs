@@ -1,9 +1,0 @@
-﻿
-namespace SeoVisualizer
-{
-	public class SeoValues
-	{ 
-        public string Title { get; set; }
-        public string Description { get; set; }
-	}
-}
