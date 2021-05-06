@@ -11,8 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{ECB0D825-02B2-4512-BA1D-2DBD3968D803}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{ECB0D825-02B2-4512-BA1D-2DBD3968D803}"
 	ProjectSection(SolutionItems) = preProject
+		SeoVisualizer\package.xml = SeoVisualizer\package.xml
 		SeoVisualizer\SeoVisualizer.nuspec = SeoVisualizer\SeoVisualizer.nuspec
 	EndProjectSection
 EndProject
