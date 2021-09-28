@@ -1,21 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29411.108
+VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoVisualizer", "SeoVisualizer\SeoVisualizer.csproj", "{D096D1CD-38A6-498D-ACC1-E958CDC3396E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoVisualizer", "SeoVisualizer\SeoVisualizer.csproj", "{01158B25-64C9-4A49-8985-1167C49D5D3B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution files", "{1748FC58-CCE5-4D84-B2E7-7CBAE887E724}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{ECB0D825-02B2-4512-BA1D-2DBD3968D803}"
-	ProjectSection(SolutionItems) = preProject
-		SeoVisualizer\package.xml = SeoVisualizer\package.xml
-		SeoVisualizer\SeoVisualizer.nuspec = SeoVisualizer\SeoVisualizer.nuspec
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoVisualizer.TestSite", "SeoVisualizer.TestSite\SeoVisualizer.TestSite.csproj", "{18D0CE88-EAD9-4371-92EE-957A24B50AB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D096D1CD-38A6-498D-ACC1-E958CDC3396E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D096D1CD-38A6-498D-ACC1-E958CDC3396E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D096D1CD-38A6-498D-ACC1-E958CDC3396E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D096D1CD-38A6-498D-ACC1-E958CDC3396E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01158B25-64C9-4A49-8985-1167C49D5D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01158B25-64C9-4A49-8985-1167C49D5D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01158B25-64C9-4A49-8985-1167C49D5D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01158B25-64C9-4A49-8985-1167C49D5D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4A078C14-E97D-4202-BD80-74979142510A}
+		SolutionGuid = {3CAB6EB1-FC1B-459A-B733-1405E5ED1437}
 	EndGlobalSection
 EndGlobal

@@ -1,3 +1,5 @@
-# Seo Visualizer for Umbraco 8
+# Seo Visualizer for Umbraco
 
-This is the branch for development against Umbraco 8+ for generall information about the package, [Go to the readme on the master-branch](https://github.com/enkelmedia/Umbraco-SeoVisualizer)
+This is the branch for Umbraco 9+.
+
+

@@ -1,23 +1,48 @@
-/SeoVisualizer.Web/
-packages
+#########################################
+#                                       #
 
-*/bin/
-*/obj/
-
-
-*/_Resharper*
-
-*.log
-*TraceLog.txt
+syntax: glob
+# Resharper
+_ReSharper.*
+# Visual Studio Stuff
+*.obj
+*.pdb
 *.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
 *.suo
-*.nuget
-*.dll
-*.hash
-*.nupkg
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+*.csproj.user
+obj/
+bin/
+[Dd]ebug*/
+[Rr]elease*/
+*.[Pp]ublish.xml
+# General
+*.orig
+*/Thumbs.db
+*/log.txt
+/Assets/
+/Build/
+*.DS_Store
 
-packages
-!packages/repositories.config
+/packages/*
+/package/*
+
+/copy file to test-enviroment.cmd
 .vs/
-SeoVisualizer/umbPackPush.cmd
-*.zip
+
+xcopy*
