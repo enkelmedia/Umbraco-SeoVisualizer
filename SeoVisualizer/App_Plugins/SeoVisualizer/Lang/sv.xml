@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+	<area alias="seoVisualizer">
+		<key alias="title_placeholder">Ange en titel</key>
+		<key alias="description_placeholder">Ange en beskrivning</key>
+		<key alias="max_length">Optimal längd är färre än %0% tecken.</key>
+	</area>
+</language>

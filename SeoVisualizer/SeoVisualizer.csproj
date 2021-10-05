@@ -33,6 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="App_Plugins\SeoVisualizer\Lang\sv.xml" />
       <None Remove="App_Plugins\SeoVisualizer\SeoVisualizer.css" />
       <None Remove="App_Plugins\SeoVisualizer\SeoVisualizer.html" />
       <None Remove="App_Plugins\SeoVisualizer\SeoVisualizerController.controller.js" />
