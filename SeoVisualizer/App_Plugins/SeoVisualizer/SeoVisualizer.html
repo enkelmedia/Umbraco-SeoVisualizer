@@ -2,12 +2,12 @@
 
     <div class="sv-form">
         <div>
-            <input type="text" ng-model="title" placeholder="Enter the Page Title" />
-            <p ng-class="{'seo-invisible' : title.length > maxCharsTitle }" class="sv-error">The optimal length is less than {{maxCharsTitle}} characters.</p>
+            <input type="text" ng-model="title" placeholder="{{titlePlaceholder}}" />
+            <p ng-class="{'seo-invisible' : title.length > maxCharsTitle }" class="sv-error"><localize key="seoVisualizer_max_length" tokens="[maxCharsTitle]">The optimal length is less than {{maxCharsTitle}} characters.</localize></p>
         </div>
         <div>
-            <textarea ng-model="description" placeholder="Enter a Page Description"></textarea>
-            <p ng-class="{'seo-invisible' : description.length > maxCharsDescription }" class="sv-error">The optimal length is less than {{maxCharsDescription}} characters.</p>
+            <textarea ng-model="description" placeholder="{{descriptionPlaceholder}}"></textarea>
+            <p ng-class="{'seo-invisible' : description.length > maxCharsDescription }" class="sv-error"><localize key="seoVisualizer_max_length" tokens="[maxCharsDescription]">The optimal length is less than {{maxCharsDescription}} characters.</localize></p>
         </div>
     </div>
     <div class="sv-demo">

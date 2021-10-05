@@ -1,6 +1,6 @@
 angular.module("umbraco")
     .controller("EnkelMedia.SeoVisualizerController",
-    function ($scope, editorState) {
+    function ($scope, editorState, localizationService) {
 
         var currentNode = editorState.getCurrent();
 
@@ -16,6 +16,11 @@ angular.module("umbraco")
 
         $scope.maxCharsTitle = 60;
         $scope.maxCharsDescription = 160;
+        $scope.titlePlaceholder = $scope.descriptionPlaceholder = '';
+        localizationService.localize('seoVisualizer_title_placeholder', undefined, 'Enter the Page Title')
+            .then(text => $scope.titlePlaceholder = text);
+        localizationService.localize('seoVisualizer_description_placeholder', undefined, 'Enter a Page Description')
+            .then(text => $scope.descriptionPlaceholder = text);
 
         // use configuration if set
         if ($scope.model.config !== null) {
