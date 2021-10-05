@@ -13,7 +13,7 @@
         <PackageReference Include="Umbraco.SqlServerCE" Version="4.0.0.1" />
     </ItemGroup>
 
-    <Import Project="..\SeoVisualizer\build\SeoVisualizer.targets" />
+    <Import Project="..\SeoVisualizer\build\UmbracoSeoVisualizer.targets" />
 
     <ItemGroup>
         <ProjectReference Include="..\SeoVisualizer\SeoVisualizer.csproj" />
