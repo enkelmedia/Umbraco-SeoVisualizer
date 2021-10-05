@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+  <area alias="seoVisualizer">
+    <key alias="title_placeholder">Introduisez le titre de la page</key>
+    <key alias="description_placeholder">Introduisez la description de la page</key>
+    <key alias="max_length">La longueur optimale est inférieure à %0% caractères.</key>
+    </area>
+</language>
