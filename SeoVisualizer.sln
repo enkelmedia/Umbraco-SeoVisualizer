@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoVisualizer", "SeoVisualizer\SeoVisualizer.csproj", "{01158B25-64C9-4A49-8985-1167C49D5D3B}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{D7
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoVisualizer.Core", "SeoVisualizer.Core\SeoVisualizer.Core.csproj", "{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18D0CE88-EAD9-4371-92EE-957A24B50AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

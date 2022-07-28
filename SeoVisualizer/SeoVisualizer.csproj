@@ -38,4 +38,8 @@
       <None Remove="App_Plugins\SeoVisualizer\SeoVisualizer.html" />
       <None Remove="App_Plugins\SeoVisualizer\SeoVisualizerController.controller.js" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SeoVisualizer.Core\SeoVisualizer.Core.csproj" />
+    </ItemGroup>
 </Project>
