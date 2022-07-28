@@ -9,7 +9,7 @@
         <Product>...</Product>
         <PackageTags>umbraco plugin package</PackageTags>
         <RootNamespace>SeoVisualizer</RootNamespace>
-        <Version>9.0.0-rc1</Version>
+        <Version>10.0.0</Version>
         <Authors>Markus Johansson</Authors>
         <Company>Enkel Media</Company>
         <RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>
