@@ -1,0 +1,25 @@
+<Project>
+
+	<PropertyGroup>
+		<TargetFrameworks>net6</TargetFrameworks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.0.0,11.0.0)" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.0,11.0.0)" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<Product>SeoVisualizer</Product>
+		<Title>SeoVisualizer</Title>
+		<Description>A simple seo visualizer property editor for Umbraco CMS</Description>
+		<PackageTags>umbraco plugin package</PackageTags>
+		<RootNamespace>SeoVisualizer</RootNamespace>
+		<Version>10.0.0</Version>
+		<Authors>Markus Johansson</Authors>
+		<Company>Enkel Media</Company>
+		<RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</PackageProjectUrl>
+	</PropertyGroup>
+
+</Project>

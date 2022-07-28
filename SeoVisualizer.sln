@@ -9,10 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoVisualizer.TestSite", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{D71F51E0-5AF5-4797-B7CA-C8EE33CB99AA}"
 	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoVisualizer.Core", "SeoVisualizer.Core\SeoVisualizer.Core.csproj", "{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoVisualizer.Core", "SeoVisualizer.Core\SeoVisualizer.Core.csproj", "{2A325C36-DBA3-40FC-B1E8-5AC9E7092D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
