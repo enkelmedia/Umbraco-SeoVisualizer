@@ -36,7 +36,6 @@ bin/
 */Thumbs.db
 */log.txt
 /Assets/
-/Build/
 *.DS_Store
 
 /packages/*
@@ -48,3 +47,4 @@ bin/
 xcopy*
 *.TestSite/
 
+/build/Artifacts/**/*
