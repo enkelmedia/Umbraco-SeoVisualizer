@@ -43,7 +43,7 @@ bin/
 
 /copy file to test-enviroment.cmd
 .vs/
-
+.idea/
 xcopy*
 *.TestSite/
 
