@@ -4,6 +4,6 @@
     <key alias="title_placeholder">Enter the Page Title</key>
     <key alias="description_placeholder">Enter a Page Description</key>
     <key alias="max_length">The optimal length is less than %0% characters.</key>
-    <key alias="no_index">Hide the page for Search Engine ?</key>
+    <key alias="no_index">Hide page from Search Engine ?</key>
     </area>
 </language>
