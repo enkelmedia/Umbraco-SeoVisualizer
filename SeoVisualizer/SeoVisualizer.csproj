@@ -2,7 +2,6 @@
     <PropertyGroup>
 	    <ContentTargetFolders>.</ContentTargetFolders>
 	    <PackageId>UmbracoSeoVisualizer</PackageId>
-	    <Version>10.1.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
