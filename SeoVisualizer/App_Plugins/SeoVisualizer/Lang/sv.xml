@@ -4,6 +4,7 @@
 		<key alias="title_placeholder">Ange en titel</key>
 		<key alias="description_placeholder">Ange en beskrivning</key>
 		<key alias="max_length">Optimal längd är färre än %0% tecken.</key>
-		<key alias="no_index">Dölja sidan från sökmotorn?</key>
+		<key alias="no_index">Dölj sidan för sökmotorer</key>
+		<key alias="exclude_title_suffix">Använt inte titel-suffix</key>
 	</area>
 </language>

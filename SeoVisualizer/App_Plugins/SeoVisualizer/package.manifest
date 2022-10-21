@@ -26,6 +26,12 @@
             "description": "Will append a suffix to the Title preview (not included in the saved data)",
             "key": "titleSuffix",
             "view": "textstring"
+          },
+          {
+            "label": "Show noindex-option",
+            "description": "Use this to show a noindex-toggle in the editor",
+            "key": "useNoIndex",
+            "view": "boolean"
           }
         ]
       }

@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <language>
-  <area alias="seoVisualizer">
-    <key alias="title_placeholder">Enter the Page Title</key>
-    <key alias="description_placeholder">Enter a Page Description</key>
-    <key alias="max_length">The optimal length is less than %0% characters.</key>
-    <key alias="no_index">Hide page from Search Engine ?</key>
-    </area>
+	<area alias="seoVisualizer">
+		<key alias="title_placeholder">Enter the Page Title</key>
+		<key alias="description_placeholder">Enter a Page Description</key>
+		<key alias="max_length">The optimal length is less than %0% characters.</key>
+		<key alias="no_index">Hide page from Search Engines</key>
+		<key alias="exclude_title_suffix">Exclude Default Title Suffix</key>
+	</area>
 </language>

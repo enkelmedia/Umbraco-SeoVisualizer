@@ -1,11 +1,14 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PropertyEditors;
 
 namespace SeoVisualizer
 {
-
+    /// <summary>
+    /// Converter for the property values
+    /// </summary>
     public class SeoValuesPropertyEditorValueConverter : PropertyValueConverterBase
     {
 
@@ -21,14 +24,38 @@ namespace SeoVisualizer
 
             var sourceString = source.ToString();
 
+            if (string.IsNullOrEmpty(sourceString))
+                return new SeoValues();
+
+            bool useTitleSuffixConfigured = false;
+            string configuredTitleSuffix = "";
+
+            var jConfig = JObject.FromObject(propertyType.DataType.Configuration);
+            
+            if (jConfig != null && jConfig.ContainsKey("titleSuffix"))
+            {
+                configuredTitleSuffix = jConfig["titleSuffix"]!.ToObject<string>();
+                useTitleSuffixConfigured = !string.IsNullOrEmpty(configuredTitleSuffix);
+            }
+
             try
             {
                 var obj = JsonConvert.DeserializeObject<SeoValues>(sourceString);
 
-                if (obj != null)
-                    return obj;
+                if (obj == null)
+                    return new SeoValues();
+                
 
-                return new SeoValues();
+                if (useTitleSuffixConfigured)
+                {
+                    if (!obj.ExcludeTitleSuffix)
+                    {
+                        obj.Title += configuredTitleSuffix;
+                    }
+                }
+
+                return obj;
+                
 
             }
             catch (Exception ex)

@@ -9,9 +9,9 @@ div.sv-form {
 }
 
 div.sv-demo {
-	max-width: 600px; /* The width of the desktop-SERP as of 2019-11-14 */
-	width: auto;
-	float: left;
+    max-width: 600px; /* The width of the desktop-SERP as of 2019-11-14 */
+    width: auto;
+    float: left;
 }
 
 /* form elements */
@@ -42,6 +42,30 @@ div.sv-form p.sv-error {
 div.sv-form p.sv-error.seo-invisible {
     visibility: initial;
 }
+
+div.sv-options h4 {
+    border-bottom: 1px solid #e9e9eb;
+}
+
+div.sv-options label {
+    min-width: 300px;
+    margin-bottom: 0;
+}
+
+div.sv-options button {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+div.sv-options > div + div {
+    margin-top: 10px;
+}
+
+div.sv-options > div {
+    display: flex;
+    align-items: center;
+}
+
 
 /* demo-mode text formating */
 

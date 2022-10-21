@@ -9,14 +9,20 @@
             <textarea ng-model="description" placeholder="{{descriptionPlaceholder}}"></textarea>
             <p ng-class="{'seo-invisible' : description.length > maxCharsDescription }" class="sv-error"><localize key="seoVisualizer_max_length" tokens="[maxCharsDescription]">The optimal length is less than {{maxCharsDescription}} characters.</localize></p>
         </div>
-        <div>
-            <label for="noIndex"><localize key="seoVisualizer_no_index">Hide the page for Search Engine ?</localize></label>
-            <umb-toggle checked="noIndex" id="noIndex"
-                        on-click="toggle()">
-            </umb-toggle>
-            <p>&nbsp; </p>
+        <div class="sv-options">
+            <div ng-show="showExcludeTitleSuffix">
+                <label>
+                    <umb-toggle checked="excludeTitleSuffix" on-click="toggleTitleSuffix()"></umb-toggle>
+                    <localize key="seoVisualizer_exclude_title_suffix">Exclude Default Title Suffix</localize>
+                </label>
+            </div>
+            <div ng-show="showNoIndex">
+                <label>
+                    <umb-toggle checked="noIndex" on-click="toggleNoIndex()"></umb-toggle>
+                    <localize key="seoVisualizer_no_index">Hide the page for Search Engine</localize>
+                </label>
+            </div>
         </div>
-
     </div>
     <div class="sv-demo">
         <h6>{{getTitle()}}</h6>

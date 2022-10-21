@@ -5,5 +5,6 @@
 		<key alias="description_placeholder">Vul de pagina omschrijving in.</key>
 		<key alias="max_length">De aanbevolen lengte van de tekst is minder dan %0% karakters.</key>
 		<key alias="no_index">Pagina verbergen voor zoekmachines?</key>
+		<key alias="exclude_title_suffix">Standaardtitelachtervoegsel uitsluiten</key>
 	</area>
 </language>

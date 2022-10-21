@@ -8,28 +8,45 @@ angular.module("umbraco")
             $scope.title = $scope.model.value.title;
             $scope.description = $scope.model.value.description;
             $scope.noIndex = $scope.model.value.noIndex;
+            $scope.excludeTitleSuffix = $scope.model.value.excludeTitleSuffix;
+
         } else {
 
             $scope.title = "";
             $scope.description = "";
             $scope.noIndex = false;
+            $scope.excludeTitleSuffix = false;
         }
 
+        // Default configuration
         $scope.maxCharsTitle = 60;
         $scope.maxCharsDescription = 160;
         $scope.titlePlaceholder = $scope.descriptionPlaceholder = '';
+        $scope.showNoIndex = false;
+        $scope.showExcludeTitleSuffix = false; // show when title suffix is configured.
+
         localizationService.localize('seoVisualizer_title_placeholder', undefined, 'Enter the Page Title')
             .then(text => $scope.titlePlaceholder = text);
+
         localizationService.localize('seoVisualizer_description_placeholder', undefined, 'Enter a Page Description')
             .then(text => $scope.descriptionPlaceholder = text);
 
         // use configuration if set
         if ($scope.model.config !== null) {
+
+            console.log('config', $scope.model.config);
+
             if ($scope.model.config.maxCharsTitle !== '' && parseInt($scope.model.config.maxCharsTitle) > 0) {
                 $scope.maxCharsTitle = parseInt($scope.model.config.maxCharsTitle);
             }
             if ($scope.model.config.maxCharsDescription !== '' && parseInt($scope.model.config.maxCharsDescription) > 0) {
                 $scope.maxCharsDescription = parseInt($scope.model.config.maxCharsDescription);
+            }
+            if ($scope.model.config.titleSuffix && $scope.model.config.titleSuffix != '') {
+                $scope.showExcludeTitleSuffix = true
+            }
+            if ($scope.model.config.useNoIndex == true) {
+                $scope.showNoIndex = true
             }
         }
 
@@ -48,9 +65,23 @@ angular.module("umbraco")
             $scope.UpdateModel();
         });
 
+        $scope.$watch("excludeTitleSuffix", function () {
+            $scope.UpdateModel();
+        });
+
         $scope.UpdateModel = function () {
-            $scope.model.value = { title: $scope.title, description: $scope.description, noIndex: $scope.noIndex };
+            $scope.model.value = { title: $scope.title, description: $scope.description, noIndex: $scope.noIndex, excludeTitleSuffix : $scope.excludeTitleSuffix };
         };
+
+        $scope.toggleNoIndex = function() {
+            this.checked = !this.checked;
+            $scope.noIndex = this.checked;
+        }
+
+        $scope.toggleTitleSuffix = function() {
+            this.checked = !this.checked;
+            $scope.excludeTitleSuffix = this.checked;
+        }
 
         $scope.getTitle = function() {
 
@@ -75,7 +106,7 @@ angular.module("umbraco")
             }
 
             // Only append suffix if there is a value set
-            if ($scope.model && $scope.model.config && $scope.model.config.titleSuffix && $scope.model.config.titleSuffix !== '') {
+            if ($scope.model && $scope.showExcludeTitleSuffix && !$scope.excludeTitleSuffix) {
                 return title + ' ' + $scope.model.config.titleSuffix;
             } else {
                 return title;
@@ -123,9 +154,6 @@ angular.module("umbraco")
             return slashes.concat(window.location.hostname);
         };
 
-        $scope.toggle = function() {
-            this.checked = !this.checked;
-            $scope.noIndex = this.checked;
-        }
+        
 
     });

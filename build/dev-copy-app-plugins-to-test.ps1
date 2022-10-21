@@ -1,0 +1,1 @@
+Copy-Item "..\SeoVisualizer\App_Plugins\SeoVisualizer\*.*" -Destination "..\SeoVisualizer.TestSite\App_Plugins\SeoVisualizer\"
