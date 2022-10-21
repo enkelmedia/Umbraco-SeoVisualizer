@@ -15,7 +15,7 @@
 		<Description>A simple seo visualizer property editor for Umbraco CMS</Description>
 		<PackageTags>umbraco plugin package</PackageTags>
 		<RootNamespace>SeoVisualizer</RootNamespace>
-		<Version>10.1.1</Version>
+		<Version>10.1.2</Version>
 		<Authors>Markus Johansson</Authors>
 		<Company>Enkel Media</Company>
 		<RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>
