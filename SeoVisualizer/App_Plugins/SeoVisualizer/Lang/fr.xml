@@ -4,5 +4,6 @@
     <key alias="title_placeholder">Introduisez le titre de la page</key>
     <key alias="description_placeholder">Introduisez la description de la page</key>
     <key alias="max_length">La longueur optimale est inférieure à %0% caractères.</key>
+    <key alias="no_index">Cacher la page pour les moteurs de recherche ?</key>
     </area>
 </language>

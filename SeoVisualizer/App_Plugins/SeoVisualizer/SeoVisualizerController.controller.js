@@ -7,11 +7,12 @@ angular.module("umbraco")
         if ($scope.model && $scope.model.value) {
             $scope.title = $scope.model.value.title;
             $scope.description = $scope.model.value.description;
+            $scope.noIndex = $scope.model.value.noIndex;
         } else {
-            
+
             $scope.title = "";
             $scope.description = "";
-            
+            $scope.noIndex = false;
         }
 
         $scope.maxCharsTitle = 60;
@@ -32,8 +33,8 @@ angular.module("umbraco")
             }
         }
 
-        
-        $scope.model.value = { title: $scope.title, description: $scope.description };
+
+        $scope.model.value = { title: $scope.title, description: $scope.description, noIndex: $scope.noIndex };
 
         $scope.$watch("title", function () {
             $scope.UpdateModel();
@@ -43,8 +44,12 @@ angular.module("umbraco")
             $scope.UpdateModel();
         });
 
+        $scope.$watch("noIndex", function () {
+            $scope.UpdateModel();
+        });
+
         $scope.UpdateModel = function () {
-            $scope.model.value = { title: $scope.title, description: $scope.description };
+            $scope.model.value = { title: $scope.title, description: $scope.description, noIndex: $scope.noIndex };
         };
 
         $scope.getTitle = function() {
@@ -52,7 +57,7 @@ angular.module("umbraco")
             var title = '';
 
             if ($scope.title && $scope.title !== '') {
-                
+
                 title = $scope.title;
             } else {
 
@@ -80,7 +85,7 @@ angular.module("umbraco")
 
         $scope.GetUrl = function () {
 
-            
+
             // find out the url based on the current culture
             var allUrls = editorState.getCurrent().urls;
 
@@ -117,5 +122,10 @@ angular.module("umbraco")
             var slashes = http.concat("//");
             return slashes.concat(window.location.hostname);
         };
+
+        $scope.toggle = function() {
+            this.checked = !this.checked;
+            $scope.noIndex = this.checked;
+        }
 
     });
