@@ -14,6 +14,7 @@ dotnet add package UmbracoSeoVisualizer
 ```
 
 ### Version
+* [Version 11 for Umbraco 11](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v11)
 * [Version 10 for Umbraco 10](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v10)
 * [Version 9 for Umbraco 9](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v9)
 * [Version 8 for Umbraco 8](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v8)
@@ -25,7 +26,7 @@ The property editor just shows a form with two fields
 * **Page title** Shows a hint for the user if the title is longer than 70 chars which is not good.
 * **Meta description** Shows a hint for the user if the title is longer than 155 chars which is not good. 
 * **Title Suffix** Can be configured so titles will be rendered like eg `My Page | Umbraco`
-* **No index-toggle** Can be configured to show next to the seo-settings.
+* **No index-toggle** Can be configured to be shown next to the seo-settings.
 
 While typing in the textboxes a preview of the Google snippet is shown in the backoffice.
 
