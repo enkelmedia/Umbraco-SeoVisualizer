@@ -2,6 +2,7 @@
     <PropertyGroup>
 	    <ContentTargetFolders>.</ContentTargetFolders>
 	    <PackageId>UmbracoSeoVisualizer</PackageId>
+      <PackageTags>umbraco umbraco-marketplace plugin package</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
