@@ -1,8 +1,9 @@
 angular.module("umbraco")
     .controller("EnkelMedia.SeoVisualizerController",
-    function ($scope, editorState, localizationService) {
+    function ($scope, editorState, localizationService,$routeParams) {
 
         var currentNode = editorState.getCurrent();
+        var culture = $routeParams.cculture ? $routeParams.cculture : $routeParams.mculture;
 
         if ($scope.model && $scope.model.value) {
             $scope.title = $scope.model.value.title;
@@ -91,7 +92,15 @@ angular.module("umbraco")
             } else {
 
                 if (currentNode && currentNode.variants) {
-                    title = currentNode.variants[0].name;
+
+                    if (culture) {
+                        var variantForCulture = currentNode.variants.filter(x => x.language.culture == culture).shift();
+                        title = variantForCulture.name;
+                    }
+                    else {
+                        title = currentNode.variants[0].name;
+                    }
+
                 } else {
                     title = '';
                 }
@@ -114,10 +123,9 @@ angular.module("umbraco")
 
         $scope.GetUrl = function () {
 
-
             // find out the url based on the current culture
             var allUrls = editorState.getCurrent().urls;
-
+            
             var url = '';
 
             if (allUrls) {
@@ -129,7 +137,7 @@ angular.module("umbraco")
 
                 } else {
                     for (var i = 0; i < allUrls.length; i++) {
-                        if (allUrls[i].culture === $scope.model.culture) {
+                        if (allUrls[i].culture === culture) {
                             url = allUrls[i].text;
                         }
                     }
