@@ -34,8 +34,6 @@ angular.module("umbraco")
         // use configuration if set
         if ($scope.model.config !== null) {
 
-            console.log('config', $scope.model.config);
-
             if ($scope.model.config.maxCharsTitle !== '' && parseInt($scope.model.config.maxCharsTitle) > 0) {
                 $scope.maxCharsTitle = parseInt($scope.model.config.maxCharsTitle);
             }
