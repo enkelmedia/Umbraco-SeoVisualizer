@@ -46,5 +46,6 @@ bin/
 .idea/
 xcopy*
 *.TestSite/
+*.TestSite.Multilang/
 
 /build/Artifacts/**/*
