@@ -1,20 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
     <PropertyGroup>
         <SeoVisualizerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\SeoVisualizer\**\*.*</SeoVisualizerContentFilesPath>
     </PropertyGroup>
-	<!-- Moved to RCL
-    <Target Name="CopySeoVisualizerAssets" BeforeTargets="Build">
-        <ItemGroup>
-            <SeoVisualizerContentFiles Include="$(SeoVisualizerContentFilesPath)" />
-        </ItemGroup>
-        <Message Text="Copying SeoVisualizer files: $(SeoVisualizerContentFilesPath) - #@(SeoVisualizerContentFiles->Count()) files"  Importance="high" />
-        <Copy
-            SourceFiles="@(SeoVisualizerContentFiles)"
-            DestinationFiles="@(SeoVisualizerContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\SeoVisualizer\%(RecursiveDir)%(Filename)%(Extension)')"
-            SkipUnchangedFiles="true" />
-
-    </Target>
+	<!-- 
+		Keeping this target so that files are cleaned for anyone upgrading to the RCL-version of the package.
 	-->
     <Target Name="ClearSeoVisualizerAssets" BeforeTargets="Clean">
         <ItemGroup>
@@ -23,5 +12,4 @@
         <Message Text="Clear old SeoVisualizer data"  Importance="high" />
         <RemoveDir Directories="@(SeoVisualizerDir)"  />
     </Target>
-
 </Project>
