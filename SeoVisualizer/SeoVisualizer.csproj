@@ -1,30 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-	    <ContentTargetFolders>.</ContentTargetFolders>
-	    <PackageId>UmbracoSeoVisualizer</PackageId>
-      <PackageTags>umbraco umbraco-marketplace plugin package</PackageTags>
-    </PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net7</TargetFramework>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+		<ContentTargetFolders>.</ContentTargetFolders>
+		<PackageId>UmbracoSeoVisualizer</PackageId>
+		<PackageTags>umbraco umbraco-marketplace plugin package</PackageTags>
+	</PropertyGroup>
 
-    <ItemGroup>
-        <Content Include="App_Plugins\SeoVisualizer\**\*.*">
-            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-        </Content>
-        <None Include="build\**\*.*">
-            <Pack>True</Pack>
-            <PackagePath>buildTransitive</PackagePath>
-        </None>
-    </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SeoVisualizer.Core\SeoVisualizer.Core.csproj" />
+	</ItemGroup>
 
-    <ItemGroup>
-      <None Remove="App_Plugins\SeoVisualizer\Lang\nl.xml" />
-      <None Remove="App_Plugins\SeoVisualizer\Lang\sv.xml" />
-      <None Remove="App_Plugins\SeoVisualizer\SeoVisualizer.css" />
-      <None Remove="App_Plugins\SeoVisualizer\SeoVisualizer.html" />
-      <None Remove="App_Plugins\SeoVisualizer\SeoVisualizerController.controller.js" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\SeoVisualizer.Core\SeoVisualizer.Core.csproj" />
-    </ItemGroup>
 </Project>

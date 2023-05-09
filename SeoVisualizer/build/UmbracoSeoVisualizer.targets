@@ -3,7 +3,7 @@
     <PropertyGroup>
         <SeoVisualizerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\SeoVisualizer\**\*.*</SeoVisualizerContentFilesPath>
     </PropertyGroup>
-
+	<!-- Moved to RCL
     <Target Name="CopySeoVisualizerAssets" BeforeTargets="Build">
         <ItemGroup>
             <SeoVisualizerContentFiles Include="$(SeoVisualizerContentFilesPath)" />
@@ -15,7 +15,7 @@
             SkipUnchangedFiles="true" />
 
     </Target>
-
+	-->
     <Target Name="ClearSeoVisualizerAssets" BeforeTargets="Clean">
         <ItemGroup>
             <SeoVisualizerDir Include="$(MSBuildProjectDirectory)\App_Plugins\SeoVisualizer\" />

@@ -14,10 +14,6 @@
     <Import Project="..\SeoVisualizer\build\UmbracoSeoVisualizer.targets" />
 
     <ItemGroup>
-        <ProjectReference Include="..\SeoVisualizer\SeoVisualizer.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
         <Content Include="App_Plugins/**" CopyToOutputDirectory="Always" />
         <Content Include="umbraco/**" CopyToOutputDirectory="Always" />
         <Content Remove="umbraco/Data/**" />
@@ -25,6 +21,10 @@
         <Content Remove="umbraco/mediacache/**" />
         <Content Remove="umbraco/models/**" />
         <Compile Include="umbraco/models/**" Exclude="**/*.flag" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SeoVisualizer\SeoVisualizer.csproj" />
     </ItemGroup>
 
     <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
