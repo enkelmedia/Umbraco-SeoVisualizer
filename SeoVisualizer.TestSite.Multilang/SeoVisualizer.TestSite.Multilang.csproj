@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Umbraco.Cms" Version="11.0.0" />
+        <PackageReference Include="Umbraco.Cms" Version="12.0.1" />
     </ItemGroup>
 	
     <Import Project="..\SeoVisualizer\build\UmbracoSeoVisualizer.targets" />
