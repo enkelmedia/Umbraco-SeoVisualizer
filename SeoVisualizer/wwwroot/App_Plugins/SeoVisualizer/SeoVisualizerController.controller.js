@@ -93,7 +93,7 @@ angular.module("umbraco")
 
                 if (currentNode && currentNode.variants) {
 
-                    if (culture) {
+                    if (culture && currentNode.variants.length > 1) {
                         var variantForCulture = currentNode.variants.filter(x => x.language.culture == culture).shift();
                         title = variantForCulture.name;
                     }
