@@ -5,10 +5,14 @@
 		<ContentTargetFolders>.</ContentTargetFolders>
 		<PackageId>UmbracoSeoVisualizer</PackageId>
 		<PackageTags>umbraco umbraco-marketplace plugin package</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\SeoVisualizer.Core\SeoVisualizer.Core.csproj" />
 	</ItemGroup>
-
+	<ItemGroup>
+		<None Include="build\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 </Project>

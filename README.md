@@ -2,7 +2,7 @@
 
 Seo Visualizer for Umbraco
 ============================
-Seo Visualizer is a simple property editor for Umbraco 7-10+ used to take seo-related user input and visualize the page in the Google search results for the editor.
+Seo Visualizer is a simple property editor for Umbraco used to take seo-related user input and visualize the page in the Google search results for the editor.
 
 ![Screenshot of Seo Visualizer](https://github.com/enkelmedia/Umbraco-SeoVisualizer/raw/master/Documentation/seo-example.PNG "Screenshot")
 
@@ -14,6 +14,8 @@ dotnet add package UmbracoSeoVisualizer
 ```
 
 ### Version
+* [Version 13 for Umbraco 13](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v13)
+* [Version 12 for Umbraco 12](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v12)
 * [Version 11 for Umbraco 11](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v11)
 * [Version 10 for Umbraco 10](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v10)
 * [Version 9 for Umbraco 9](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v9)
@@ -77,7 +79,7 @@ We welcome any contribution both as in reporting issues and as in writing code, 
 
 #### 2. Run:
 ```
-dotnet pack --configuration Release
+build\build.ps1
 ```
 
 #### 3. Upload to nuget

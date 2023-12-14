@@ -1,21 +1,20 @@
 <Project>
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0</TargetFrameworks>
+		<TargetFrameworks>net8.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Umbraco.Cms.Web.Website" Version="12.0.1" />
-		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="12.0.1" />
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="13.0.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.0.0" />
 	</ItemGroup>
 
 	<PropertyGroup>
 		<Product>SeoVisualizer</Product>
 		<Title>SeoVisualizer</Title>
 		<Description>A simple seo visualizer property editor for Umbraco CMS</Description>
-		<PackageTags>umbraco plugin package</PackageTags>
 		<RootNamespace>SeoVisualizer</RootNamespace>
-		<Version>12.0.1</Version>
+		<Version>13.0.1</Version>
 		<Authors>Markus Johansson</Authors>
 		<Company>Enkel Media</Company>
 		<RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>

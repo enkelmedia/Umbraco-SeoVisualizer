@@ -1,0 +1,33 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Markus Johansson",
+    "Description": "Made by me and the Umbraco community.",
+    "Url": "https://www.enkelmedia.se/blogg",
+    "ImageUrl": ""
+  },
+  "Title": "SeoVisualizer",
+  "Description": "Property editor for Umbraco used to take seo-related user input and visualize the Google search results for the editor.",
+  "DocumentationUrl": "https://github.com/enkelmedia/Umbraco-SeoVisualizer",
+  "IssueTrackerUrl": "https://github.com/enkelmedia/Umbraco-SeoVisualizer/issues",
+  "Category": "Editor Tools",
+  "LicenseTypes": [ "Free" ],
+  "PackageType": "Package",
+  "Tags": [
+    "seo"
+  ],
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/enkelmedia/Umbraco-SeoVisualizer/v13/Documentation/screenshot.png",
+      "Caption": "Property editor in use"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/enkelmedia/Umbraco-SeoVisualizer/v13/Documentation/se-example-hints.PNG",
+      "Caption": "Property editor in use"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/enkelmedia/Umbraco-SeoVisualizer/v13/Documentation/seo-example.PNG",
+      "Caption": "Property editor in use"
+    }
+  ]
+}
