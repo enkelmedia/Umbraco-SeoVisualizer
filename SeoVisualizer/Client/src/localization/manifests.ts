@@ -1,6 +1,4 @@
-import type { ManifestLocalization } from "@umbraco-cms/backoffice/extension-registry";
-
-const localizationManifests : Array<ManifestLocalization> = [
+const localizationManifests : Array<UmbExtensionManifest> = [
   {
 		type: "localization",
 		alias: "SeoVisualizer.Localize.En_US",

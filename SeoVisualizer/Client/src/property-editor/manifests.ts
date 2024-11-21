@@ -1,6 +1,5 @@
-import { ManifestPropertyEditorSchema, ManifestPropertyEditorUi } from '@umbraco-cms/backoffice/extension-registry';
 
-const schema : ManifestPropertyEditorSchema = {
+const schema : UmbExtensionManifest = {
   type : 'propertyEditorSchema',
   name : 'Seo Visualizer Property Editor Schema',
   alias : 'EnkelMedia.SeoVisualizer', //NOTE: This is matched with server-side info
@@ -37,7 +36,7 @@ const schema : ManifestPropertyEditorSchema = {
   }
 }
 
-const ui : ManifestPropertyEditorUi = {
+const ui : UmbExtensionManifest = {
     type: "propertyEditorUi",
     alias : "EnkelMedia.SeoVisualizer.PropertyEditorUi",
     name : "Seo Visualizer",
