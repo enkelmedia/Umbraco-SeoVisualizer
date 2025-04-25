@@ -292,8 +292,8 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       font-size: 20px;
       line-height: 1.3;
       margin-bottom: 3px;
-      color: blue;
-      text-decoration: underline;
+      color: rgb(26, 13, 171);
+      text-decoration: none;
     }
 
     #preview p {
@@ -301,10 +301,11 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       margin-bottom: 3px;
       line-height: 1.57;
       word-wrap: break-word;
+      color: rgb(71, 71, 71);
     }
 
     #preview p.url {
-      color: #00802a;
+      color: rgb(77, 81, 86);
     }
 
     p.error {
