@@ -1,9 +1,8 @@
 import { css,html,customElement, state, when} from '@umbraco-cms/backoffice/external/lit';
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/extension-registry';
 import { UmbFormControlMixin } from '@umbraco-cms/backoffice/validation';
-import { UmbPropertyEditorConfigCollection, UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
+import { UmbPropertyEditorConfigCollection, UmbPropertyEditorUiElement, UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT, UmbDocumentUrlInfoModel, UmbDocumentVariantModel, UmbDocumentWorkspaceContext } from '@umbraco-cms/backoffice/document';
 import { UMB_PROPERTY_CONTEXT } from '@umbraco-cms/backoffice/property';
 import { UUIInputElement, UUITextareaElement, UUIToggleElement } from '@umbraco-cms/backoffice/external/uui';
@@ -233,7 +232,7 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
               rows="6"
               placeholder=${this.localize.term('seoVisualizer_description_placeholder')}
             ></uui-textarea>
-            ${when((this.value?.title?.length ?? 0) > this._configRecommendedDescriptionLength,()=>html`
+            ${when((this.value?.description?.length ?? 0) > this._configRecommendedDescriptionLength,()=>html`
               <p class="error">${this.localize.term('seoVisualizer_max_length',this._configRecommendedDescriptionLength)}</p>
             `)}
           </div>
@@ -283,7 +282,6 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
     }
 
     #preview h6, #preview p {
-      font-family: Arial, Helvectiva, san-serif;
       padding: 0;
       margin: 0;
     }
@@ -292,7 +290,7 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       font-size: 20px;
       line-height: 1.3;
       margin-bottom: 3px;
-      color: rgb(26, 13, 171);
+      color: var(--uui-color-focus);
       text-decoration: none;
     }
 
@@ -301,15 +299,15 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       margin-bottom: 3px;
       line-height: 1.57;
       word-wrap: break-word;
-      color: rgb(71, 71, 71);
+      color: var(--uui-color-text);
     }
 
     #preview p.url {
-      color: rgb(77, 81, 86);
+      color: var(--uui-color-text-alt);
     }
 
     p.error {
-      color: red;
+      color: var(--uui-color-invalid);
       margin:0;
     }
 
