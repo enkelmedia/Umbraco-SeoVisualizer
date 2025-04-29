@@ -1,4 +1,4 @@
-import { ManifestPropertyEditorSchema, ManifestPropertyEditorUi } from '@umbraco-cms/backoffice/extension-registry';
+import { ManifestPropertyEditorSchema, ManifestPropertyEditorUi } from '@umbraco-cms/backoffice/property-editor';
 
 const schema : ManifestPropertyEditorSchema = {
   type : 'propertyEditorSchema',

@@ -1,4 +1,4 @@
-import type { ManifestLocalization } from "@umbraco-cms/backoffice/extension-registry";
+import type { ManifestLocalization } from "@umbraco-cms/backoffice/localization";
 
 const localizationManifests : Array<ManifestLocalization> = [
   {
