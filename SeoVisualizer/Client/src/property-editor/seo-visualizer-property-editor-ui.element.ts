@@ -232,7 +232,7 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
               rows="6"
               placeholder=${this.localize.term('seoVisualizer_description_placeholder')}
             ></uui-textarea>
-            ${when((this.value?.title?.length ?? 0) > this._configRecommendedDescriptionLength,()=>html`
+            ${when((this.value?.description?.length ?? 0) > this._configRecommendedDescriptionLength,()=>html`
               <p class="error">${this.localize.term('seoVisualizer_max_length',this._configRecommendedDescriptionLength)}</p>
             `)}
           </div>
@@ -282,7 +282,6 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
     }
 
     #preview h6, #preview p {
-      font-family: Arial, Helvectiva, san-serif;
       padding: 0;
       margin: 0;
     }
@@ -291,8 +290,8 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       font-size: 20px;
       line-height: 1.3;
       margin-bottom: 3px;
-      color: blue;
-      text-decoration: underline;
+      color: var(--uui-color-focus);
+      text-decoration: none;
     }
 
     #preview p {
@@ -303,11 +302,11 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
     }
 
     #preview p.url {
-      color: #00802a;
+      color: var(--uui-color-text-alt);
     }
 
     p.error {
-      color: red;
+      color: var(--uui-color-invalid);
       margin:0;
     }
 
