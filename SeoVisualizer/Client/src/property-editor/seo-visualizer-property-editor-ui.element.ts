@@ -3,11 +3,16 @@ import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { UmbFormControlMixin } from '@umbraco-cms/backoffice/validation';
 import { UmbPropertyEditorConfigCollection, UmbPropertyEditorUiElement, UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
-import { UMB_DOCUMENT_WORKSPACE_CONTEXT, UmbDocumentUrlInfoModel, UmbDocumentVariantModel, UmbDocumentWorkspaceContext } from '@umbraco-cms/backoffice/document';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT, UmbDocumentUrlRepository, UmbDocumentVariantModel, UmbDocumentWorkspaceContext } from '@umbraco-cms/backoffice/document';
 import { UMB_PROPERTY_CONTEXT } from '@umbraco-cms/backoffice/property';
 import { UUIInputElement, UUITextareaElement, UUIToggleElement } from '@umbraco-cms/backoffice/external/uui';
 import {DEFAULT_MAX_CHARS_DESCRIPTION, DEFAULT_MAX_CHARS_TITLE} from "../models/constants.ts";
 import {SeoVisualizerPropertyEditorValue} from "../models/seo-visualizer-property-editor-value.ts";
+import { UMB_ACTION_EVENT_CONTEXT } from '@umbraco-cms/backoffice/action';
+import { UmbEntityActionEvent, UmbRequestReloadStructureForEntityEvent } from '@umbraco-cms/backoffice/entity-action';
+import { debounce } from '@umbraco-cms/backoffice/utils';
+import { UmbEntityUnique } from '@umbraco-cms/backoffice/entity';
+import { UMB_TEMPLATE_SEARCH_PROVIDER_ALIAS } from '@umbraco-cms/backoffice/template';
 
 /**
 * seo-visualizer-property-editor-ui description
@@ -18,13 +23,18 @@ import {SeoVisualizerPropertyEditorValue} from "../models/seo-visualizer-propert
 @customElement('seo-visualizer-property-editor-ui')
 export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<SeoVisualizerPropertyEditorValue | undefined, typeof UmbLitElement>(UmbLitElement, undefined) implements UmbPropertyEditorUiElement {
 
+  #documentUrlRepository = new UmbDocumentUrlRepository(this);
   #workspaceContext? : UmbDocumentWorkspaceContext;
+  #eventContext?: typeof UMB_ACTION_EVENT_CONTEXT.TYPE;
 
   @state()
   _culture? : string;
 
   @state()
-  _urls? : UmbDocumentUrlInfoModel[];
+  _unique? : UmbEntityUnique;
+
+  @state()
+  _urls? : UmbDocumentUrlModel[];
 
   @state()
   _variants? : UmbDocumentVariantModel[];
@@ -70,25 +80,38 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
 		});
 
     this.consumeContext(UMB_PROPERTY_CONTEXT, (propertyContext) => {
-
-      this.observe(propertyContext.variantId,(variantId)=>{
+      this.observe(propertyContext?.variantId,(variantId)=>{
         this._culture = variantId?.culture ?? undefined;
         this.#setPropertiesByCulture();
       },'SeoVisualizerVariantIdSubscription')
 		});
+
+    // Setting up event-handler for when document is published (urls might change)
+    this.consumeContext(UMB_ACTION_EVENT_CONTEXT, (context) => {
+			this.#eventContext = context;
+
+			this.#eventContext?.removeEventListener(
+				UmbRequestReloadStructureForEntityEvent.TYPE,
+				this.#onReloadRequest as unknown as EventListener,
+			);
+
+			this.#eventContext?.addEventListener(
+				UmbRequestReloadStructureForEntityEvent.TYPE,
+				this.#onReloadRequest as unknown as EventListener,
+			);
+		});
+
   }
 
   #observeContent() {
     if (!this.#workspaceContext) return;
 
-    this.observe(
-      this.#workspaceContext.urls,
-      (urls) => {
-        this._urls = [...urls];
-        this.#setPropertiesByCulture();
-      },
-      '_documentUrls',
-    );
+    this.observe(this.#workspaceContext?.unique, async(unique)=> {
+      this._unique = unique;
+
+      await this.#requestUrls();
+
+    },'_documentUrls');
 
     this.observe(
       this.#workspaceContext.variants,
@@ -98,6 +121,28 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       },
       '_variants',
     );
+  }
+
+  #debounceRequestUrls = debounce(() => this.#requestUrls(), 50);
+
+  #onReloadRequest = (event : UmbEntityActionEvent) => {
+    if (event.getUnique() !== this.#workspaceContext?.getUnique()) return;
+		if (event.getEntityType() !== this.#workspaceContext.getEntityType()) return;
+    this.#debounceRequestUrls();
+  }
+
+  async #requestUrls() {
+
+    if(!this._unique)
+      return;
+
+    const {data} = await this.#documentUrlRepository.requestItems([this._unique]);
+
+      if (data?.length) {
+        const item = data[0];
+        this._urls = item.urls;
+        this.#setPropertiesByCulture();
+      }
   }
 
   #setPropertiesByCulture() {
@@ -119,7 +164,7 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
       return;
     }
 
-    let url = this.#prependProtocolAndHost(urls[0].url);
+    let url = this.#prependProtocolAndHost(urls[0]?.url ?? '');
 
     this._previewUrl = url;
 
@@ -320,3 +365,15 @@ declare global {
         'seo-visualizer-property-editor-ui': SeoVisualizerPropertyEditorUiElement;
     }
 }
+
+/* --- TEMP Workaround for https://github.com/umbraco/Umbraco-CMS/issues/19413 --- */
+interface UmbDocumentUrlsModel {
+	unique: string;
+	urlsInfos: Array<UmbDocumentUrlModel>;
+}
+
+interface UmbDocumentUrlModel {
+	culture?: string | null;
+	url?: string;
+}
+/* --- TEMP Workaround end */
