@@ -1,40 +1,49 @@
 const localizationManifests : Array<UmbExtensionManifest> = [
   {
 		type: "localization",
-		alias: "SeoVisualizer.Localize.En_US",
+		alias: "SeoVisualizer.Localize.en_us",
 		name: "Seo Visualizer English (United States)",
 		meta: {
-			"culture": "en-us"
+			"culture": "en"
 		},
 		js : ()=> import('./en-us.js')
 	},
   {
 		type: "localization",
-		alias: "SeoVisualizer.Localize.Sv_SE",
+		alias: "SeoVisualizer.Localize.sv_se",
 		name: "Seo Visualizer Swedish (Sweden)",
 		meta: {
-			"culture": "sv-se"
+			"culture": "sv"
 		},
 		js : ()=> import('./sv-se.js')
 	},
   {
 		type: "localization",
-		alias: "SeoVisualizer.Localize.sl_NL",
+		alias: "SeoVisualizer.Localize.nl_nl",
 		name: "Seo Visualizer Dutch (Netherlands)",
 		meta: {
-			"culture": "nl-nl"
+			"culture": "nl"
 		},
 		js : ()=> import('./nl-nl.js')
 	},
   {
 		type: "localization",
-		alias: "SeoVisualizer.Localize.Fr_FR",
+		alias: "SeoVisualizer.Localize.fr_fr",
 		name: "Seo Visualizer French (France)",
 		meta: {
-			"culture": "fr-fr"
+			"culture": "fr"
 		},
 		js : ()=> import('./fr-fr.js')
-	},
+  },
+  {
+    type: "localization",
+    alias: "SeoVisualizer.Localize.hr_hr",
+    name: "Seo Visualizer Croatian (Croatia)",
+    meta: {
+      "culture": "hr"
+    },
+    js: () => import('./hr-hr.js')
+  }
 ]
 
 export const manifests = [
