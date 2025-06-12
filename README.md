@@ -15,7 +15,7 @@ dotnet add package UmbracoSeoVisualizer
 ```
 
 ### Version
-* [Version 16 for Umbraco 15](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v16)
+* [Version 16 for Umbraco 16](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v16)
 * [Version 15 for Umbraco 15](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v15)
 * [Version 14 for Umbraco 14](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v14)
 * [Version 13 for Umbraco 13](https://github.com/enkelmedia/Umbraco-SeoVisualizer/tree/v13)
