@@ -4,6 +4,6 @@
 		<PackageId>UmbracoSeoVisualizer.Core</PackageId>
 	</PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Core" Version="[16.0.0-rc3,17)" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="[16.0.0,17)" />
   </ItemGroup>
 </Project>

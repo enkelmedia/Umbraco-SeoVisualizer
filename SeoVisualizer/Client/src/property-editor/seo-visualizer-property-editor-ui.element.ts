@@ -2,8 +2,8 @@ import { css,html,customElement, state, when} from '@umbraco-cms/backoffice/exte
 import { UmbTextStyles } from '@umbraco-cms/backoffice/style';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { UmbFormControlMixin } from '@umbraco-cms/backoffice/validation';
-import { UmbPropertyEditorConfigCollection, UmbPropertyEditorUiElement, UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
-import { UMB_DOCUMENT_WORKSPACE_CONTEXT, UmbDocumentUrlRepository, UmbDocumentVariantModel, UmbDocumentWorkspaceContext } from '@umbraco-cms/backoffice/document';
+import { UmbPropertyEditorConfigCollection, UmbPropertyEditorUiElement } from '@umbraco-cms/backoffice/property-editor';
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT, UmbDocumentUrlModel, UmbDocumentUrlRepository, UmbDocumentVariantModel, UmbDocumentWorkspaceContext } from '@umbraco-cms/backoffice/document';
 import { UMB_PROPERTY_CONTEXT } from '@umbraco-cms/backoffice/property';
 import { UUIInputElement, UUITextareaElement, UUIToggleElement } from '@umbraco-cms/backoffice/external/uui';
 import {DEFAULT_MAX_CHARS_DESCRIPTION, DEFAULT_MAX_CHARS_TITLE} from "../models/constants.ts";
@@ -12,7 +12,7 @@ import { UMB_ACTION_EVENT_CONTEXT } from '@umbraco-cms/backoffice/action';
 import { UmbEntityActionEvent, UmbRequestReloadStructureForEntityEvent } from '@umbraco-cms/backoffice/entity-action';
 import { debounce } from '@umbraco-cms/backoffice/utils';
 import { UmbEntityUnique } from '@umbraco-cms/backoffice/entity';
-import { UMB_TEMPLATE_SEARCH_PROVIDER_ALIAS } from '@umbraco-cms/backoffice/template';
+import { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
 
 /**
 * seo-visualizer-property-editor-ui description
@@ -223,7 +223,7 @@ export class SeoVisualizerPropertyEditorUiElement extends UmbFormControlMixin<Se
 
     this.value = {...newVal,...updates};
 
-    this.dispatchEvent(new UmbPropertyValueChangeEvent());
+    this.dispatchEvent(new UmbChangeEvent());
 
   }
 
@@ -367,6 +367,7 @@ declare global {
 }
 
 /* --- TEMP Workaround for https://github.com/umbraco/Umbraco-CMS/issues/19413 --- */
+/*
 interface UmbDocumentUrlsModel {
 	unique: string;
 	urlsInfos: Array<UmbDocumentUrlModel>;
@@ -376,4 +377,5 @@ interface UmbDocumentUrlModel {
 	culture?: string | null;
 	url?: string;
 }
+*/
 /* --- TEMP Workaround end */
