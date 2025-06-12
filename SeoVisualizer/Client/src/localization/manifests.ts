@@ -35,6 +35,15 @@ const localizationManifests : Array<UmbExtensionManifest> = [
 		},
 		js : ()=> import('./fr-fr.js')
 	},
+  {
+    type: "localization",
+    alias: "SeoVisualizer.Localize.hr_hr",
+    name: "Seo Visualizer Croatian (Croatia)",
+    meta: {
+      "culture": "hr-hr"
+    },
+    js: () => import('./hr-hr.js')
+  }
 ]
 
 export const manifests = [
