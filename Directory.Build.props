@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
-		<TargetFrameworks>net9.0</TargetFrameworks>
+		<TargetFrameworks>net10.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	</PropertyGroup>
@@ -9,7 +9,7 @@
 		<Title>SeoVisualizer</Title>
 		<Description>A simple seo visualizer property editor for Umbraco CMS</Description>
 		<RootNamespace>SeoVisualizer</RootNamespace>
-		<Version>16.0.1</Version>
+		<Version>17.0.0-rc1</Version>
 		<Authors>Markus Johansson</Authors>
 		<Company>Enkel Media</Company>
 		<RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>

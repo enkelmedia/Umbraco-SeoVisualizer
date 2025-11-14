@@ -9,12 +9,18 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Api.Common" Version="[16.0.0,17)" />
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[16.0.0,17)" />
+    <PackageReference Include="Umbraco.Cms.Api.Common" Version="[17.0.0-rc2,18)" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="[17.0.0-rc2,18)" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\SeoVisualizer.Core\SeoVisualizer.Core.csproj" />
 	</ItemGroup>
+  <ItemGroup>
+    <Compile Remove="wwwroot\App_Plugins\SeoVizualizer\**" />
+    <Content Remove="wwwroot\App_Plugins\SeoVizualizer\**" />
+    <EmbeddedResource Remove="wwwroot\App_Plugins\SeoVizualizer\**" />
+    <None Remove="wwwroot\App_Plugins\SeoVizualizer\**" />
+  </ItemGroup>
 	<ItemGroup>
 		<None Include="build\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
@@ -30,6 +36,7 @@
       <None Remove="Client\**" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="wwwroot\App_Plugins\SeoVizualizer\**" />
       <Content Include="wwwroot\App_Plugins\SeoVizualizer\dist\**" />
     </ItemGroup>
   </Target>
