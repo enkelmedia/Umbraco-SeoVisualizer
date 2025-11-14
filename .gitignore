@@ -50,3 +50,4 @@ xcopy*
 
 /build/Artifacts/**/*
 SeoVisualizer/wwwroot/App_Plugins/SeoVisualizer/dist/
+build/push.ps1
