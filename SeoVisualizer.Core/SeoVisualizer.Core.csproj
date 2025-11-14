@@ -1,7 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<PackageId>UmbracoSeoVisualizer.Core</PackageId>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+    <!-- PDBs beside DLLs -->
+    <DebugType>portable</DebugType>
+
+    <!-- Publish symbols as a separate .snupkg -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Make SourceLink work + deterministic CI build -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Core" Version="[17.0.0-rc2,18)" />

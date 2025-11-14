@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 	<PropertyGroup>
 		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 		<StaticWebAssetBasePath>/</StaticWebAssetBasePath>
@@ -7,6 +7,20 @@
 		<PackageTags>umbraco umbraco-marketplace plugin package</PackageTags>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+    <!-- PDBs beside DLLs -->
+    <DebugType>portable</DebugType>
+
+    <!-- Publish symbols as a separate .snupkg -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Make SourceLink work + deterministic CI build -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/enkelmedia/Umbraco-SeoVisualizer</RepositoryUrl>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Api.Common" Version="[17.0.0-rc2,18)" />
