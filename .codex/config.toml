@@ -1,0 +1,11 @@
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[windows]
+sandbox = "unelevated"
+
+[sandbox_workspace_write]
+network_access = false
+writable_roots = [
+  'C:\\Development\\CookieTractor.Umbraco\\v18'
+]

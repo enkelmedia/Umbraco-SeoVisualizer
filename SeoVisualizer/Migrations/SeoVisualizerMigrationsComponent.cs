@@ -8,7 +8,7 @@ using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 
 namespace SeoVisualizer.Migrations;
 
-public class SeoVisualizerMigrationsComponent : IComponent
+public class SeoVisualizerMigrationsComponent : IAsyncComponent
 {
 
     private readonly ICoreScopeProvider _coreScopeProvider;
@@ -29,7 +29,7 @@ public class SeoVisualizerMigrationsComponent : IComponent
         _runtimeState = runtimeState;
     }
 
-    public void Initialize()
+    public async Task InitializeAsync(bool isRestarting, CancellationToken cancellationToken)
     {
         if (_runtimeState.Level < RuntimeLevel.Run)
         {
@@ -37,12 +37,12 @@ public class SeoVisualizerMigrationsComponent : IComponent
         }
 
         var upgrader = new Upgrader(new SeoVisualizerPackageMigration());
-        upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
+        await upgrader.ExecuteAsync(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
     }
 
-    public void Terminate()
+    public Task TerminateAsync(bool isRestarting, CancellationToken cancellationToken)
     {
-
+        return Task.CompletedTask;
     }
 }
 

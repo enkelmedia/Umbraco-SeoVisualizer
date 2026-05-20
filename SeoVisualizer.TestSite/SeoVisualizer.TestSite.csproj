@@ -8,8 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Umbraco.Cms" Version="17.0.0" />
-      <PackageReference Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="17.0.0" />
+      <PackageReference Include="Umbraco.Cms" Version="18.0.0-beta2" />
+      <PackageReference Include="Umbraco.Cms.Api.Management" Version="18.0.0-beta2" />
+      <PackageReference Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="18.0.0-beta2" />
     </ItemGroup>
 
     <Import Project="..\SeoVisualizer\build\UmbracoSeoVisualizer.targets" />

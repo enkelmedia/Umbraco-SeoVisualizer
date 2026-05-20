@@ -1,13 +1,13 @@
 {
   "$schema": "../../../../Our.Umbraco.TheDashboard.Testsite/umbraco-package-schema.json",
   "name": "SeoVisualizer",
-  "version": "17.0.0",
+  "version": "18.0.0-beta2",
   "extensions": [
     {
       "type": "backofficeEntryPoint",
       "alias": "SeoVisualizer.EntryPoint",
       "name": "SeoVisualizer Entry Point",
-      "js": "/App_Plugins/SeoVisualizer/dist/seo-visualizer-umbraco.js?v1700",
+      "js": "/App_Plugins/SeoVisualizer/dist/seo-visualizer-umbraco.js?v1800-beta2",
       "weight": 13000
     }
   ]

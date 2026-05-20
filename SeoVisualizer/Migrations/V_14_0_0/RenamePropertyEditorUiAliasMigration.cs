@@ -1,17 +1,6 @@
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using NPoco;
-using Serilog.Core;
-using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.IO;
-using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Infrastructure.Migrations;
-using Umbraco.Cms.Infrastructure.Packaging;
-using Umbraco.Cms.Infrastructure.Persistence.Dtos;
-using Umbraco.Cms.Infrastructure.Persistence;
-using Umbraco.Extensions;
 
 namespace SeoVisualizer.Migrations.V_14_0_0;
 
@@ -19,7 +8,7 @@ namespace SeoVisualizer.Migrations.V_14_0_0;
 /// Rename the PropertyEditorUi property for any data type using our property editors
 /// so that it uses the new Property Editor UI
 /// </summary>
-public class RenamePropertyEditorUiAliasMigration : MigrationBase
+public class RenamePropertyEditorUiAliasMigration : AsyncMigrationBase
 {
     private readonly IDataTypeService _dataTypeService;
     private readonly IUserService _userService;
@@ -34,9 +23,9 @@ public class RenamePropertyEditorUiAliasMigration : MigrationBase
         _userService = userService;
     } 
 
-    protected override void Migrate()
+    protected override async Task MigrateAsync()
     {
-        var allDataTypes = _dataTypeService.GetAllAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+        var allDataTypes = await _dataTypeService.GetAllAsync();
 
         var dataTypes = allDataTypes.Where(x => x.EditorAlias == "EnkelMedia.SeoVisualizer").ToList();
 
@@ -51,7 +40,7 @@ public class RenamePropertyEditorUiAliasMigration : MigrationBase
         {
             datatype.EditorUiAlias = "EnkelMedia.SeoVisualizer.PropertyEditorUi";
 
-            _dataTypeService.UpdateAsync(datatype, user.Key);
+            await _dataTypeService.UpdateAsync(datatype, user.Key);
 
         }
 
