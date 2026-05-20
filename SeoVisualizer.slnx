@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution/">
+    <File Path="Directory.Build.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="SeoVisualizer.Core/SeoVisualizer.Core.csproj" />
+  <Project Path="SeoVisualizer.TestSite.Multilang/SeoVisualizer.TestSite.Multilang.csproj" />
+  <Project Path="SeoVisualizer.TestSite/SeoVisualizer.TestSite.csproj" />
+  <Project Path="SeoVisualizer/SeoVisualizer.csproj" />
+</Solution>
