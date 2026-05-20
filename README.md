@@ -8,7 +8,7 @@ Seo Visualizer is a simple property editor for Umbraco used to take seo-related 
 ![Screenshot of Seo Visualizer](https://github.com/enkelmedia/Umbraco-SeoVisualizer/raw/master/Documentation/seo-example.PNG "Screenshot")
 
 ## Installation
-The esiest way to install the package is to use nuget:
+The easiest way to install the package is to use NuGet:
 
 ```
 dotnet add package UmbracoSeoVisualizer
@@ -73,13 +73,15 @@ or like this
 
 The last approach would perform better as the convertion of the object will only have to be done once.
 
-
-
-## Contribution
+## Contribute
 We welcome any contribution both as in reporting issues, adding translations and in writing code. If you're planing to make a Pull Request please start with an issue to let us know and to increase the chances for the PR to be merged.
 
 ### Running the Project
+> Before starting the project for the first time, ensure to run `npm install` and `npm run watch` in the `SeoVisualizer/Client`, this will ensure that the client files are built and copied to the project.
+
 Developers should be able to open the solution and just run any of the test-sites in the project, or use `dotnet run`.
+
+The Test sites are configured to use [Unattended install](https://docs.umbraco.com/umbraco-cms/get-started/installation/unattended-install) and should start automatically.
 
 #### Frontend
 To get started with the frontend-files, open a terminal, go to the `SeoVisualizer/Client` and run `npm install` (make sure to check the required node version in `.nvmrc` before).
