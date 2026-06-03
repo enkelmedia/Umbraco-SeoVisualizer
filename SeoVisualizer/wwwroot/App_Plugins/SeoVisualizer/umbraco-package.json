@@ -1,7 +1,7 @@
 {
   "$schema": "../../../../Our.Umbraco.TheDashboard.Testsite/umbraco-package-schema.json",
   "name": "SeoVisualizer",
-  "version": "18.0.0-beta2",
+  "version": "18.0.0-rc1",
   "extensions": [
     {
       "type": "backofficeEntryPoint",
