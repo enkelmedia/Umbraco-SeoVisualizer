@@ -16,6 +16,6 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Core" Version="[18.0.0-beta2,19)" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="[18.0.0,19)" />
   </ItemGroup>
 </Project>
